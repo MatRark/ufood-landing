@@ -13,6 +13,18 @@
     gtag('js', new Date());
     gtag('config', 'G-9PJ6RCCT18');
   </script>
+
+  <!-- Evento para medir clics en el botón de Google Play -->
+  <script>
+    function trackPlayStoreClick() {
+      if (typeof gtag === 'function') {
+        gtag('event', 'click_playstore', {
+          event_category: 'engagement',
+          event_label: 'hero_play_store_badge'
+        });
+      }
+    }
+  </script>
   
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 
@@ -431,7 +443,7 @@
     <div class="hero-content">
       
       <div class="hero-left">
-        <span class="badge">🍔 UFood</span>
+        <span class="badge">UFood</span>
         <h1>
           Comida deliciosa<br>
           directo a <span>tu salón</span>
@@ -440,7 +452,12 @@
           Ordena snacks, postres y comida casera hecha por tus compañeros. 
           Entrega rápida en cualquier edificio de tu universidad. ¡Sin filas, sin esperas!
         </p>
-        <a href="https://play.google.com/store" target="_blank" class="store-badge">
+        <a 
+          href="https://play.google.com/store" 
+          target="_blank" 
+          class="store-badge"
+          onclick="trackPlayStoreClick()"
+        >
           <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Descargar en Google Play">
         </a>
 
